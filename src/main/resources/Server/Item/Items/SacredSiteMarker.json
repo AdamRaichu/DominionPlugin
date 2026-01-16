@@ -1,0 +1,84 @@
+{
+  "TranslationProperties": {
+    "Name": "items.Flamingie_DominionGamemode_SacredSiteMarker.name",
+    "Description": "items.Flamingie_DominionGamemode_SacredSiteMarker.description"
+  },
+  "PlayerAnimationsId": "Block",
+  "Categories": [
+    "Furniture.Containers"
+  ],
+  "Icon": "Icons/ItemsGenerated/Sacred_Site_Marker.png",
+  "BlockType": {
+    "State": {
+      "Id": "Flamingie_DominionGamemode_SacredSiteMarker"
+    },
+    "BlockSoundSetId": "Metal",
+    "DrawType": "Cube",
+    "Gathering": {
+      "Breaking": {
+        "GatherType": "Rocks"
+      },
+      "ModelTexture": "Icons/ItemsGenerated/Soil_Dirt.png"
+    },
+    "Material": "Solid",
+    "Opacity": "Transparent",
+    "ParticleColor": "#4b4b4b",
+    "BlockParticleSetId": "Metal",
+    "Supporting": {
+      "Up": [
+        {
+          "FaceType": "Full"
+        }
+      ]
+    },
+    "Support": {
+      "Down": [
+        {
+          "FaceType": "Full"
+        }
+      ]
+    },
+    "VariantRotation": "NESW",
+    "Interactions": {},
+    "Textures": [
+      {
+        "All": "BlockTextures/Clay_Smooth_Red.png"
+      }
+    ]
+  },
+  "Tags": {
+    "Type": [
+      "Furniture"
+    ]
+  },
+  "Recipe": {
+    "Input": [
+      {
+        "ItemId": "Ingredient_Bar_Iron",
+        "Quantity": 20
+      }
+    ],
+    "BenchRequirement": [
+      {
+        "Id": "Workbench",
+        "Type": "Crafting",
+        "Categories": [
+          "Workbench_Tinkering"
+        ]
+      }
+    ]
+  },
+  "IconProperties": {
+    "Scale": 0.55,
+    "Rotation": [
+      22.5,
+      45,
+      22.5
+    ],
+    "Translation": [
+      0,
+      -15
+    ]
+  },
+  "ItemSoundSetId": "ISS_Blocks_Stone"
+}

@@ -1,4 +1,4 @@
-package org.example.plugin;
+package io.github.adamraichu.dominion;
 
 import com.hypixel.hytale.protocol.GameMode;
 import com.hypixel.hytale.server.core.Message;
@@ -8,7 +8,8 @@ import com.hypixel.hytale.server.core.command.system.basecommands.CommandBase;
 import javax.annotation.Nonnull;
 
 /**
- * This is an example command that will simply print the name of the plugin in chat when used.
+ * This is an example command that will simply print the name of the plugin in
+ * chat when used.
  */
 public class ExampleCommand extends CommandBase {
 

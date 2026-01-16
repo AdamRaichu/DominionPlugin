@@ -1,14 +1,17 @@
 {
-    "Group": "Example",
-    "Name": "ExamplePlugin",
+    "Group": "Flamingie",
+    "Name": "DominionPlugin",
     "Version": "0.0.2",
     "Description": "An example plugin for HyTale!",
     "Authors": [
         {
-            "Name": "It's you!"
+            "Name": "AdamRaichu"
+        },
+        {
+            "Name": "Flamingie"
         }
     ],
-    "Website": "example.org",
+    "Website": "https://github.com/AdamRaichu/DominionPlugin",
     "ServerVersion": "*",
     "Dependencies": {
         
@@ -17,6 +20,6 @@
         
     },
     "DisabledByDefault": false,
-    "Main": "org.example.plugin.ExamplePlugin",
+    "Main": "io.github.adamraichu.dominion.DominionPlugin",
     "IncludesAssetPack": true
 }
