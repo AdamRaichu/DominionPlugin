@@ -14,7 +14,8 @@
     "Website": "https://github.com/AdamRaichu/DominionPlugin",
     "ServerVersion": "*",
     "Dependencies": {
-        
+        "Hytale:BlockStateModule": "*",
+        "Hytale:EntityModule": "*"
     },
     "OptionalDependencies": {
         
