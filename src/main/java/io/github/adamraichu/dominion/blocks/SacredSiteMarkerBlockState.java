@@ -12,6 +12,7 @@ import com.hypixel.hytale.server.core.universe.world.storage.ChunkStore;
 
 import static io.github.adamraichu.dominion.DominionPlugin.LOGGER;
 
+@SuppressWarnings("removal")
 public class SacredSiteMarkerBlockState extends BlockState implements TickableBlockState {
     public static final Codec<SacredSiteMarkerBlockState> CODEC = BuilderCodec.builder(SacredSiteMarkerBlockState.class, SacredSiteMarkerBlockState::new, BlockState.BASE_CODEC)
 //            .append(new KeyedCodec<>("MarkerReference", PersistentRef.CODEC), (spawn, o) -> spawn.spawnMarkerReference = o, spawn -> spawn.spawnMarkerReference)
