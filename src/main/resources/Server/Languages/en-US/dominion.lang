@@ -1,0 +1,3 @@
+Flamingie_DominionGamemode_SacredSiteMarker.name=Sacred Site Marker
+Flamingie_DominionGamemode_SacredSiteMarker.description=The block that controls the logic of the gamemode.
+interactionHints.sacredSiteMarker.interact=Press [{key}] to start game (or crouch to modify config)

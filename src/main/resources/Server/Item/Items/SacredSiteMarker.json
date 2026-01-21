@@ -1,7 +1,7 @@
 {
   "TranslationProperties": {
-    "Name": "items.Flamingie_DominionGamemode_SacredSiteMarker.name",
-    "Description": "items.Flamingie_DominionGamemode_SacredSiteMarker.description"
+    "Name": "dominion.Flamingie_DominionGamemode_SacredSiteMarker.name",
+    "Description": "dominion.Flamingie_DominionGamemode_SacredSiteMarker.description"
   },
   "PlayerAnimationsId": "Block",
   "Categories": [
@@ -12,6 +12,7 @@
     "State": {
       "Id": "Flamingie_DominionGamemode_SacredSiteMarker"
     },
+    "InteractionHint": "dominion.interactionHints.sacredSiteMarker.interact",
     "BlockSoundSetId": "Metal",
     "DrawType": "Cube",
     "Gathering": {
@@ -39,7 +40,15 @@
       ]
     },
     "VariantRotation": "NESW",
-    "Interactions": {},
+    "Interactions": {
+      "Use": {
+        "Interactions": [
+          {
+            "Type": "SacredSiteMarkerInteraction"
+          }
+        ]
+      }
+    },
     "Textures": [
       {
         "All": "BlockTextures/Clay_Smooth_Red.png"
