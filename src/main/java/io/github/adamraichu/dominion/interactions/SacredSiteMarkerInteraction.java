@@ -2,9 +2,6 @@ package io.github.adamraichu.dominion.interactions;
 
 import static io.github.adamraichu.dominion.DominionPlugin.LOGGER;
 
-import java.util.Collection;
-import java.util.concurrent.CompletableFuture;
-
 import com.hypixel.hytale.codec.Codec;
 import com.hypixel.hytale.codec.KeyedCodec;
 import com.hypixel.hytale.codec.builder.BuilderCodec;
@@ -25,18 +22,24 @@ import com.hypixel.hytale.server.core.universe.Universe;
 import com.hypixel.hytale.server.core.universe.world.World;
 import com.hypixel.hytale.server.core.universe.world.meta.BlockState;
 import com.hypixel.hytale.server.core.universe.world.storage.EntityStore;
-
 import io.github.adamraichu.dominion.blocks.SacredSiteMarkerBlockState;
 import io.github.adamraichu.dominion.ui.SacredSiteMarker_OpMenu;
+import java.util.Collection;
+import java.util.concurrent.CompletableFuture;
 
 public class SacredSiteMarkerInteraction extends SimpleInstantInteraction {
-  public static final BuilderCodec<SacredSiteMarkerInteraction> CODEC = BuilderCodec
-      .builder(SacredSiteMarkerInteraction.class, SacredSiteMarkerInteraction::new, SimpleInstantInteraction.CODEC)
-      .build();
+
+  public static final BuilderCodec<SacredSiteMarkerInteraction> CODEC = BuilderCodec.builder(
+      SacredSiteMarkerInteraction.class,
+      SacredSiteMarkerInteraction::new,
+      SimpleInstantInteraction.CODEC).build();
 
   @SuppressWarnings({ "deprecation", "removal" })
   @Override
-  protected void firstRun(InteractionType iType, InteractionContext ctx, CooldownHandler arg2) {
+  protected void firstRun(
+      InteractionType iType,
+      InteractionContext ctx,
+      CooldownHandler arg2) {
     // TODO Auto-generated method stub
     LOGGER.atInfo().log("SacredSiteMarkerInteraction executed.");
     // arg1
@@ -55,42 +58,62 @@ public class SacredSiteMarkerInteraction extends SimpleInstantInteraction {
       if (state instanceof SacredSiteMarkerBlockState) {
         SacredSiteMarkerBlockState markerState = (SacredSiteMarkerBlockState) state;
         // Start the game with the interacting player.
-        Player player = world.getEntityStore().getStore().getComponent(ref,
-            Player.getComponentType());
+        Player player = world
+            .getEntityStore()
+            .getStore()
+            .getComponent(ref, Player.getComponentType());
         PlayerRef pRef = player.getPlayerRef();
 
-        if (!PermissionsModule.get().getGroupsForUser(pRef.getUuid()).contains("OP")) {
-          player.sendMessage(Message.raw("Only operators can interact with this block."));
+        if (!PermissionsModule.get()
+            .getGroupsForUser(pRef.getUuid())
+            .contains("OP")) {
+          player.sendMessage(
+              Message.raw("Only operators can interact with this block."));
           return;
         }
 
-        if (!markerState.getStatus().equals(SacredSiteMarkerBlockState.Status.NoGame)) {
+        if (!markerState
+            .getStatus()
+            .equals(SacredSiteMarkerBlockState.Status.NoGame)) {
           // Only do something if there is no game in progress.
           return;
         }
 
-        MovementStatesComponent movementState = world.getEntityStore().getStore().getComponent(ref,
-            MovementStatesComponent.getComponentType());
+        MovementStatesComponent movementState = world
+            .getEntityStore()
+            .getStore()
+            .getComponent(ref, MovementStatesComponent.getComponentType());
         boolean isCrouching = movementState.getMovementStates().crouching;
 
         if (isCrouching) {
           // Configure mode
-          CompletableFuture.runAsync(() -> {
-            player.getPageManager().openCustomPage(ref,
-                world.getEntityStore().getStore(),
-                new SacredSiteMarker_OpMenu(pRef, CustomPageLifetime.CanDismiss, markerState));
-          }, world);
+          CompletableFuture.runAsync(
+              () -> {
+                player
+                    .getPageManager()
+                    .openCustomPage(
+                        ref,
+                        world.getEntityStore().getStore(),
+                        new SacredSiteMarker_OpMenu(
+                            pRef,
+                            CustomPageLifetime.CanDismiss,
+                            markerState));
+              },
+              world);
           return;
         }
 
         Collection<PlayerRef> pRefs = world.getPlayerRefs();
         PlayerRef[] players = pRefs.toArray(new PlayerRef[0]);
         markerState.startGame(players, world.getEntityStore().getStore());
-
       } else {
-        LOGGER.atWarning()
-            .log("SacredSiteMarkerInteraction executed on non-SacredSiteMarkerBlockState at " + pos.x + ", " + pos.y
-                + ", " + pos.z);
+        LOGGER.atWarning().log(
+            "SacredSiteMarkerInteraction executed on non-SacredSiteMarkerBlockState at " +
+                pos.x +
+                ", " +
+                pos.y +
+                ", " +
+                pos.z);
       }
     });
 

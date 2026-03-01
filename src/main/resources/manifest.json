@@ -1,26 +1,24 @@
 {
-    "Group": "Flamingie",
-    "Name": "DominionPlugin",
-    "Version": "0.0.2",
-    "Description": "An example plugin for HyTale!",
-    "Authors": [
-        {
-            "Name": "AdamRaichu"
-        },
-        {
-            "Name": "Flamingie"
-        }
-    ],
-    "Website": "https://github.com/AdamRaichu/DominionPlugin",
-    "ServerVersion": "*",
-    "Dependencies": {
-        "Hytale:BlockStateModule": "*",
-        "Hytale:EntityModule": "*"
+  "Group": "Flamingie",
+  "Name": "DominionPlugin",
+  "Version": "0.0.2",
+  "Description": "An example plugin for HyTale!",
+  "Authors": [
+    {
+      "Name": "AdamRaichu"
     },
-    "OptionalDependencies": {
-        
-    },
-    "DisabledByDefault": false,
-    "Main": "io.github.adamraichu.dominion.DominionPlugin",
-    "IncludesAssetPack": true
+    {
+      "Name": "Flamingie"
+    }
+  ],
+  "Website": "https://github.com/AdamRaichu/DominionPlugin",
+  "ServerVersion": "*",
+  "Dependencies": {
+    "Hytale:BlockStateModule": "*",
+    "Hytale:EntityModule": "*"
+  },
+  "OptionalDependencies": {},
+  "DisabledByDefault": false,
+  "Main": "io.github.adamraichu.dominion.DominionPlugin",
+  "IncludesAssetPack": true
 }

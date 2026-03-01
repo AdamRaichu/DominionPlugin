@@ -9,9 +9,11 @@ import com.hypixel.hytale.component.system.tick.EntityTickingSystem;
 import com.hypixel.hytale.server.core.universe.world.storage.EntityStore;
 
 public class PointSystem extends EntityTickingSystem<EntityStore> {
+
   private final ComponentType<EntityStore, PointsComponent> pointsComponentType;
 
-  public PointSystem(ComponentType<EntityStore, PointsComponent> pointsComponentType) {
+  public PointSystem(
+      ComponentType<EntityStore, PointsComponent> pointsComponentType) {
     this.pointsComponentType = pointsComponentType;
   }
 
@@ -21,9 +23,12 @@ public class PointSystem extends EntityTickingSystem<EntityStore> {
   }
 
   @Override
-  public void tick(float arg0, int arg1, ArchetypeChunk<EntityStore> arg2, Store<EntityStore> arg3,
+  public void tick(
+      float arg0,
+      int arg1,
+      ArchetypeChunk<EntityStore> arg2,
+      Store<EntityStore> arg3,
       CommandBuffer<EntityStore> arg4) {
     // Nothing to do right now.
   }
-
 }

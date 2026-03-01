@@ -4,9 +4,7 @@
     "Description": "dominion.Flamingie_DominionGamemode_SacredSiteMarker.description"
   },
   "PlayerAnimationsId": "Block",
-  "Categories": [
-    "Furniture.Containers"
-  ],
+  "Categories": ["Furniture.Containers"],
   "Icon": "Icons/ItemsGenerated/Sacred_Site_Marker.png",
   "BlockType": {
     "State": {
@@ -56,9 +54,7 @@
     ]
   },
   "Tags": {
-    "Type": [
-      "Furniture"
-    ]
+    "Type": ["Furniture"]
   },
   "Recipe": {
     "Input": [
@@ -71,23 +67,14 @@
       {
         "Id": "Workbench",
         "Type": "Crafting",
-        "Categories": [
-          "Workbench_Tinkering"
-        ]
+        "Categories": ["Workbench_Tinkering"]
       }
     ]
   },
   "IconProperties": {
     "Scale": 0.55,
-    "Rotation": [
-      22.5,
-      45,
-      22.5
-    ],
-    "Translation": [
-      0,
-      -15
-    ]
+    "Rotation": [22.5, 45, 22.5],
+    "Translation": [0, -15]
   },
   "ItemSoundSetId": "ISS_Blocks_Stone"
 }
