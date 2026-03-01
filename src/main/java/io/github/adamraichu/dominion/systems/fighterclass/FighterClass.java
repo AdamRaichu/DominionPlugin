@@ -1,4 +1,4 @@
-package io.github.adamraichu.dominion.systems;
+package io.github.adamraichu.dominion.systems.fighterclass;
 
 import java.util.List;
 

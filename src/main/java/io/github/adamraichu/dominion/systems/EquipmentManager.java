@@ -3,6 +3,8 @@ package io.github.adamraichu.dominion.systems;
 import com.hypixel.hytale.server.core.entity.entities.Player;
 import com.hypixel.hytale.server.core.io.handlers.game.InventoryPacketHandler;
 
+import io.github.adamraichu.dominion.systems.fighterclass.FighterClass;
+
 public class EquipmentManager {
 
   public static void equip(Player player, FighterClass fighterClass) {

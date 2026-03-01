@@ -13,8 +13,8 @@ import com.hypixel.hytale.server.core.universe.world.World;
 import com.hypixel.hytale.server.core.universe.world.storage.EntityStore;
 import io.github.adamraichu.dominion.DominionPlugin;
 import io.github.adamraichu.dominion.systems.EquipmentManager;
-import io.github.adamraichu.dominion.systems.FighterClass;
-import io.github.adamraichu.dominion.systems.FighterClassComponent;
+import io.github.adamraichu.dominion.systems.fighterclass.FighterClass;
+import io.github.adamraichu.dominion.systems.fighterclass.FighterClassComponent;
 
 public class ClassSwitcherInteraction extends SimpleInstantInteraction {
 

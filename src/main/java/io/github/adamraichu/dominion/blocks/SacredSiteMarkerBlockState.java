@@ -25,8 +25,9 @@ import com.hypixel.hytale.server.core.universe.world.meta.BlockState;
 import com.hypixel.hytale.server.core.universe.world.storage.ChunkStore;
 import com.hypixel.hytale.server.core.universe.world.storage.EntityStore;
 import io.github.adamraichu.dominion.DominionPlugin;
-import io.github.adamraichu.dominion.systems.Faction;
-import io.github.adamraichu.dominion.systems.FactionComponent;
+import io.github.adamraichu.dominion.systems.faction.Faction;
+import io.github.adamraichu.dominion.systems.faction.FactionComponent;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;

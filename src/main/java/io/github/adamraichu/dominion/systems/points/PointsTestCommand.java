@@ -1,4 +1,4 @@
-package io.github.adamraichu.dominion.systems;
+package io.github.adamraichu.dominion.systems.points;
 
 import com.hypixel.hytale.component.Ref;
 import com.hypixel.hytale.component.Store;

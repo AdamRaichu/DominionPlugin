@@ -8,12 +8,13 @@ import com.hypixel.hytale.server.core.plugin.JavaPluginInit;
 import com.hypixel.hytale.server.core.universe.world.storage.EntityStore;
 import io.github.adamraichu.dominion.blocks.SacredSiteMarkerBlockState;
 import io.github.adamraichu.dominion.interactions.SacredSiteMarkerInteraction;
-import io.github.adamraichu.dominion.systems.FactionComponent;
-import io.github.adamraichu.dominion.systems.FactionQueryCommand;
-import io.github.adamraichu.dominion.systems.FighterClassComponent;
-import io.github.adamraichu.dominion.systems.PointSystem;
-import io.github.adamraichu.dominion.systems.PointsComponent;
-import io.github.adamraichu.dominion.systems.PointsTestCommand;
+import io.github.adamraichu.dominion.systems.faction.FactionComponent;
+import io.github.adamraichu.dominion.systems.faction.FactionQueryCommand;
+import io.github.adamraichu.dominion.systems.fighterclass.FighterClassComponent;
+import io.github.adamraichu.dominion.systems.points.PointSystem;
+import io.github.adamraichu.dominion.systems.points.PointsComponent;
+import io.github.adamraichu.dominion.systems.points.PointsTestCommand;
+
 import javax.annotation.Nonnull;
 
 /**

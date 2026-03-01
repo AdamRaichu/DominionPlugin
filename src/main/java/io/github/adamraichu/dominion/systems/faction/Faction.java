@@ -1,4 +1,4 @@
-package io.github.adamraichu.dominion.systems;
+package io.github.adamraichu.dominion.systems.faction;
 
 import java.util.List;
 
