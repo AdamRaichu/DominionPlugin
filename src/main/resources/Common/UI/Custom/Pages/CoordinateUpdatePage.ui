@@ -7,7 +7,7 @@ Group {
   Anchor: (Width: 800, Height: 500);
   Label #Label42450fa2 {
     Style: (TextColor: #ffffff);
-    Text: "Text";
+    Text: "HRE Spawn Point";
   }
   $C.@NumberField #NumberFielde973f82b {
     Style: (TextColor: #ffffff);
@@ -20,7 +20,7 @@ Group {
   }
   Label #Label75b52fa5 {
     Style: (TextColor: #ffffff);
-    Text: "Text";
+    Text: "OE Spawn Point";
   }
   $C.@NumberField #NumberField31af9960 {
     Style: (TextColor: #ffffff);

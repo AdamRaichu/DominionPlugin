@@ -19,6 +19,7 @@ import com.hypixel.hytale.server.core.entity.entities.Player;
 import com.hypixel.hytale.server.core.entity.movement.MovementStatesComponent;
 import com.hypixel.hytale.server.core.modules.interaction.interaction.CooldownHandler;
 import com.hypixel.hytale.server.core.modules.interaction.interaction.config.SimpleInstantInteraction;
+import com.hypixel.hytale.server.core.permissions.PermissionsModule;
 import com.hypixel.hytale.server.core.universe.PlayerRef;
 import com.hypixel.hytale.server.core.universe.Universe;
 import com.hypixel.hytale.server.core.universe.world.World;
@@ -56,9 +57,17 @@ public class SacredSiteMarkerInteraction extends SimpleInstantInteraction {
         // Start the game with the interacting player.
         Player player = world.getEntityStore().getStore().getComponent(ref,
             Player.getComponentType());
-        // LOGGER.atInfo().log("Starting Sacred Site game for player " +
-        // player.getDisplayName());
         PlayerRef pRef = player.getPlayerRef();
+
+        if (!PermissionsModule.get().getGroupsForUser(pRef.getUuid()).contains("OP")) {
+          player.sendMessage(Message.raw("Only operators can interact with this block."));
+          return;
+        }
+
+        if (!markerState.getStatus().equals(SacredSiteMarkerBlockState.Status.NoGame)) {
+          // Only do something if there is no game in progress.
+          return;
+        }
 
         MovementStatesComponent movementState = world.getEntityStore().getStore().getComponent(ref,
             MovementStatesComponent.getComponentType());
@@ -69,8 +78,7 @@ public class SacredSiteMarkerInteraction extends SimpleInstantInteraction {
           CompletableFuture.runAsync(() -> {
             player.getPageManager().openCustomPage(ref,
                 world.getEntityStore().getStore(),
-                new SacredSiteMarker_OpMenu(pRef, CustomPageLifetime.CanDismiss));
-            pRef.sendMessage(Message.raw("UI Page Shown"));
+                new SacredSiteMarker_OpMenu(pRef, CustomPageLifetime.CanDismiss, markerState));
           }, world);
           return;
         }
@@ -79,11 +87,10 @@ public class SacredSiteMarkerInteraction extends SimpleInstantInteraction {
         PlayerRef[] players = pRefs.toArray(new PlayerRef[0]);
         markerState.startGame(players, world.getEntityStore().getStore());
 
-        // // legacy UI code for testing
-
       } else {
         LOGGER.atWarning()
-            .log("SacredSiteMarkerInteraction executed on non-SacredSiteMarkerBlockState at " + pos.toString());
+            .log("SacredSiteMarkerInteraction executed on non-SacredSiteMarkerBlockState at " + pos.x + ", " + pos.y
+                + ", " + pos.z);
       }
     });
 
